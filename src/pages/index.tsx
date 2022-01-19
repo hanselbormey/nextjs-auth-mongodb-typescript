@@ -4,6 +4,7 @@ import Image from 'next/image';
 import ServiceCard from '~components/Card/ServiceCard';
 
 const Home: NextPage = () => {
+
   return (
     <div className='flex flex-col justify-center items-center'>
       <section className='h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-[600px] relative'>

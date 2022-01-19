@@ -19,6 +19,6 @@
       "~*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/news.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/news.js", "src/lib/entities.js"],
   "exclude": ["node_modules"]
 }
