@@ -18,7 +18,7 @@ export default NextAuth({
       name: 'Credentials',
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: {  label: "Password", type: "password" }
+        password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
         const res = await fetch(`${process.env.NEXTAUTH_URL}/api/user?email=${credentials?.username}`, {
@@ -35,7 +35,7 @@ export default NextAuth({
           return user;
         }
         // Return null if user data could not be retrieved
-         return null
+        return null
       }
     }),
   ],
@@ -49,14 +49,17 @@ export default NextAuth({
         token.accessToken = account.access_token
       }
       if (user) {
-        token.role = user.role;
+        // TODO: check how to extend user properties to add role
+        token.role = user.role as string;
       }
       return token
     },
     async session({ session, token }) {
       console.log(`user inside session: ${token.role}`)
       if (token.role) {
-        session.user.role = token.role;
+        if (session.user) {
+          session.user.role = token.role;
+        }
       }
       return session
     }
