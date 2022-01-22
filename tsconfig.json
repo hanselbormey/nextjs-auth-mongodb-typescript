@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -19,6 +20,6 @@
       "~*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/news.js", "src/lib/entities.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/news.js", "src/lib/entities.ts"],
   "exclude": ["node_modules"]
 }

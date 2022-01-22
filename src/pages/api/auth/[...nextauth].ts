@@ -1,14 +1,14 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
-/* import { TypeORMLegacyAdapter } from '@next-auth/typeorm-legacy-adapter';
-import * as entities from '~lib/entities' */
+import { TypeORMLegacyAdapter } from '@next-auth/typeorm-legacy-adapter';
+import * as entities from '~lib/entities'
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
   /* adapter: MongoDBAdapter(clientPromise), */
-  /* adapter: TypeORMLegacyAdapter(process.env.MONGODB_URI!, { entities }), */
+  adapter: TypeORMLegacyAdapter(process.env.MONGODB_URI!, { entities }),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
